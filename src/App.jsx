@@ -1,19 +1,35 @@
-import React from 'react'
+import React,{Suspense, lazy} from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-import Anime from './page/Anime'
 import Header from './Header'
-import Home from './page/Home'
+const Home= lazy(()=> import('./page/Home'))
+const Anime= lazy(()=> import('./page/Anime'))
+const Contact= lazy(()=> import( './page/Contact'))
+const Movie =lazy( ()=>import('./page/Movie'))
+const Series = lazy(()=> import('./page/Series'))
 
 
 function App() {
 
+  const renderLoader = () => <p>Loading</p>;
 
   return (
     
     <div className='w-full h-screen  overflow-x-hidden'>
       <Header />
-      <Home />
-      <Anime />
+      <Suspense fallback={renderLoader()}>
+       <Routes>
+                
+          <Route path="/" element={<Home />}/>
+          <Route path="/home" element={<Home />}/>
+          <Route path="/movies" element={<Movie />} />
+          <Route path="/series" element={<Series />} />
+          <Route path="/anime" element={<Anime />} />
+          <Route path="/contacts" element={<Contact />} />
+  
+      
+      </Routes>
+      </Suspense>
     </div>
     
   )
