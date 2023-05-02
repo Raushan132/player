@@ -3,7 +3,10 @@ import Video from '../components/Video'
 
 const Movie = () => {
   return (
-    <div><Video/></div>
+    <div>
+      <Video/>
+      
+    </div>
   )
 }
 

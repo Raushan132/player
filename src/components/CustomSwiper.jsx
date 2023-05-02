@@ -21,7 +21,7 @@ const CustomSwiper = () => {
         }}
         
         modules={[Autoplay, Pagination]}
-        className="mySwiper text-white w-[70%] h-64 bg-blue-400"
+        className="mySwiper text-white w-[60%] h-64 bg-blue-400"
         >
         <SwiperSlide className='text-red-500 h-64 bg-blue'>Slide 1</SwiperSlide>
         <SwiperSlide className='text-red-500'>Slide 2</SwiperSlide>
